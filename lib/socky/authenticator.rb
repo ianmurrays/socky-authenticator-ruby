@@ -49,7 +49,7 @@ module Socky
     
     def string_to_sign
       args = [salt, connection_id, channel]
-      # args << (@method == :websocket ? rights_string : event.to_s)
+      args << (@method == :websocket ? rights_string : event.to_s)
       # args << user_data unless user_data.nil?
       args.collect(&:to_s).join(":")
     end
